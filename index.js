@@ -12,7 +12,7 @@ function runBot(){
     console.log('video_id: '+preUrl.response.game.video_id);
 
     if(typeof preUrl.response.game.video_id !== 'undefined'){
-      tgBot.sendMessage('@clever_answer', 'Трансляция началась!')
+      tgBot.sendMessage('@tumkas', 'Трансляция началась!')
       request({
         url: 'https://api.vk.com/method/video.getLongPollServer?access_token=fb0becc681ac927eaa1bc7af3fbe2e361e6d3f9053f9bea23049bf7f14747e1bc9bf7a693cd4f8059233a&owner_id='+preUrl.response.game.video_owner_id+'&video_id='+preUrl.response.game.video_id+'&v=5.71&lang=ru',
         encoding: 'utf-8', gzip: true,headers: {'cookie': 'remixlang=0', 'accept': '* /*', 'user-agent': 'StreamQuiz/37 CFNetwork/894 Darwin/17.4.0', 'accept-language': 'ru'}}, function(e, a, rr){
